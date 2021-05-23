@@ -1,3 +1,15 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package maquina;
+
+/**
+ *
+ * @author Sergio Cano
+ * 
+ */
 import java.util.Scanner;
 public class Maquina {
 
@@ -7,19 +19,27 @@ public class Maquina {
     public static void main(String[] args) {
         // TODO code application logic here
         String[ ] Nombre_Prod;
-        Nombre_Prod = new String[4];        
-        int[ ] N_inventario_Prod = new int[4];
-        int[ ] V_producto = new int[4];
-        int[ ] Inventarios = new int[4];
-        int[ ] Ventas_x_Producto = new int[4];
-        int[ ] P_disponibles = new int[4];
-        
+        Nombre_Prod = new String[4];        //Nombre Producto
+        int[ ] N_inventario_Prod = new int[4];//Numero/identificador del producto 
+        int[ ] V_producto = new int[4];//Valor del producto
+        int[ ] Inventarios = new int[4];//Inventario x producto
+        int[ ] Ventas_x_Producto = new int[4];//Ventas c ptoducto
+        int[ ] P_disponibles = new int[4];//Productos disponibles        
         
         Scanner entradaEscaner = new Scanner (System.in); //Creación de un objeto Scanner
         
+        ///////////////////////////////////////////////////////////Nombre del producto
         //LLenar el arreglo del nombre del producto
         for (int i = 0; i < Nombre_Prod.length; i++) {
             System.out.println("Ingresa el nombre del producto: "+ i);
+            
+            //condicion de tipo de dato
+//            if (i(i)){
+//               alert (entero + " es entero");
+//            }else{
+//               alert (entero + " NO es entero");
+//            }
+            
             Nombre_Prod[i]=entradaEscaner.next();
         }
         //mostrar el nombre de los productos
@@ -28,6 +48,7 @@ public class Maquina {
             System.out.println("Producto  "+ y + " :"+ Nombre_Prod[y]);
         }
         
+        ///////////////////////////////////////////////////////////Numero/identificador del producto
         //LLenar el arreglo de número de inventario
         for (int i = 0; i < N_inventario_Prod.length; i++) {
             System.out.println("Ingresa el identificador del producto: "+i+1);
@@ -37,6 +58,54 @@ public class Maquina {
         System.out.println("Número inventario productos registrados: ");
         for (int y = 0; y < N_inventario_Prod.length; y++) {
             System.out.println("El identificador del producto es: " + N_inventario_Prod[y]);
+        }
+        
+        ///////////////////////////////////////////////////////////valor de los productos
+        //LLenar el arreglo del valor del prodcuto
+        for (int i = 0; i < V_producto.length; i++) {
+            System.out.println("Ingresa el valor del producto: "+i+1);
+            V_producto[i]=entradaEscaner.nextInt();
+        }
+        //mostrar el valor de los productos
+        System.out.println("Valor de los producto: ");
+        for (int y = 0; y < V_producto.length; y++) {
+            System.out.println("El valor del producto es: " + V_producto[y]);
+        }
+        
+        ///////////////////////////////////////////////////////////inventario
+        //LLenar el arreglo del inventario
+        for (int i = 0; i < Inventarios.length; i++) {
+            System.out.println("Ingresa la cantidad a tener en el inventario: "+i+1);
+            Inventarios[i]=entradaEscaner.nextInt();
+        }
+        //mostrar el valor de inventario
+        System.out.println("La cantidad de productos en inventario es: ");
+        for (int y = 0; y < Inventarios.length; y++) {
+            System.out.println("El número de producto en inventario es: " + Inventarios[y]);
+        }
+        
+        ///////////////////////////////////////////////////////////Ventas realizadas por producto
+        //LLenar el arreglo del ventas realizadas por producto
+        for (int i = 0; i < Ventas_x_Producto.length; i++) {
+            System.out.println("Ingrese el número de ventas realizadas por producto: "+i+1);
+            Ventas_x_Producto[i]=entradaEscaner.nextInt();
+        }
+        //mostrar los productos vendidos
+        System.out.println("La cantidad de productos vendidos es: ");
+        for (int y = 0; y < Ventas_x_Producto.length; y++) {
+            System.out.println("Las ventas realizadas por producto es: " + Ventas_x_Producto[y]);
+        }
+        
+        ///////////////////////////////////////////////////////////Productos disponibles (este puede ser un arrgelo de la resta de los 2 anteriores)
+        //LLenar el arreglo de productos disponibles
+        for (int i = 0; i < P_disponibles.length; i++) {
+            System.out.println("Ingrese el numero de productos disponibles: "+i+1);
+            P_disponibles[i]=entradaEscaner.nextInt();
+        }
+        //mostrar los productos vendidos
+        System.out.println("La cantidad de productos dispinibles es: ");
+        for (int y = 0; y < P_disponibles.length; y++) {
+            System.out.println("El numero de productos disponibles es: " + P_disponibles[y]);
         }
     }
     
